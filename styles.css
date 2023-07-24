@@ -1,0 +1,185 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff; /* Set the background color of the entire page to white */
+}
+
+header {
+    background-color: #f5f5f5d3; /* Off-white color - adjust the shade as desired */
+    color: #333; /* Text color for the header */
+    padding: 1rem;
+    box-shadow:  0 3px 5px rgba(88, 54, 8, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+nav{
+  
+    height: 25px;
+    text-align:  right;
+    padding : 10px ; 
+ 
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 1rem;
+    
+}
+
+nav ul li a {
+    color: #020202f1; /* Link color for the header */
+    text-decoration: none;
+    transition: cubic-bezier(1, 0, 0, 1) 0.15s;
+}
+
+nav ul li a:hover {
+    color :#ff8000 ; 
+}
+#name {
+    color: rgb(214, 162, 93); 
+    font-size: auto;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    float: left;
+
+   
+}
+
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.short-intro { 
+    margin-right: 0px; /* Add some space between the description and the profile picture */
+    width:  500px;
+    height:  300px;
+    margin-left : 50px;
+    margin-top : 120px;
+    text-align: center;
+}
+
+.profile-picture {
+    max-width: 200px; /* Set the maximum width for the profile picture */
+}
+
+.profile-picture img {
+    display: block;
+    width: 100%;
+    border-radius: 5%; /* Apply a circular shape to the profile picture */
+
+    margin-left: 1px;
+    
+    box-shadow: 0 8px 10px rgba(77, 41, 1, 0.3);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal; /* Set the font weight to normal (non-bold) */
+}
+
+
+
+.whitespace-before {
+    padding-left: 150px; /* Adjust the value as needed to add the desired whitespace before the <br> element */
+    /* or */
+   /* margin-top: 20px; */
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center; /* To center the elements horizontally */
+    align-items: center; /* To center the elements vertically */
+}
+
+.social-links a {
+    margin: 0 15px; /* Add some spacing between the elements */
+}
+
+.social-links i {
+    font-size: 30px; /* Adjust the icon size as needed */
+    color: rgb(214, 162, 93); 
+}
+
+
+#large-text{
+   
+    font-size: 25px;
+    text-align: center;
+
+}
+
+#gem {
+    float : left; 
+    color: rgb(214, 162, 93); 
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        flex-direction: column; /* Stack the elements vertically when compressed */
+    }
+
+    .description,
+    .profile-picture {
+        max-width: 100%; /* Remove the max-width on smaller screens to take full width */
+    }
+}
