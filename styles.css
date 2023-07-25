@@ -101,10 +101,11 @@ nav ul li a:hover {
 }
 
 
-#about {
+#intro{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 100px;
     
 }
 
@@ -119,7 +120,7 @@ nav ul li a:hover {
 }
 
 .profile-picture {
-    max-width: 200px; /* Set the maximum width for the profile picture */
+    max-width: 250px; /* Set the maximum width for the profile picture */
 }
 
 .profile-picture img {
@@ -160,10 +161,33 @@ h1, h2, h3, h4, h5, h6 {
     color: rgb(214, 162, 93); 
 }
 
+#about{
+    margin-top:  300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.about__header{
+    display: flex;
+    justify-content: left;
+    font-size: large;
+    text-align: left;
+}
+
+
+.about__description{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 600px;
+}
 
 #large-text{
    
-    font-size: 25px;
+    font-size: 30px;
+   
     text-align: center;
 
 }
@@ -178,8 +202,68 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column; /* Stack the elements vertically when compressed */
     }
 
-    .description,
+    #about,
     .profile-picture {
         max-width: 100%; /* Remove the max-width on smaller screens to take full width */
     }
 }
+
+#Education{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+  
+  .logo img {
+    max-width: 100px; /* Set the maximum width to maintain aspect ratio */
+    height: auto; 
+
+  }
+  
+  .content {
+    flex: 1;
+  }
+  
+  .name {
+    font-size: 24px;
+   
+  }
+  
+  .duration {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+    font-family : 'Montserrat', sans-serif; 
+    margin-bottom: 8px;
+  }
+  
+  .description {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+    
+  .work-description {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+  
+  .gpa {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+  }
