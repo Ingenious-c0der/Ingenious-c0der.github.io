@@ -175,7 +175,12 @@ h1, h2, h3, h4, h5, h6 {
     font-size: large;
     text-align: left;
 }
-
+.education__header{
+    display: flex;
+    justify-content: left;
+    font-size: large;
+    text-align: left;
+}
 
 .about__description{
     display: flex;
@@ -212,16 +217,24 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     
+}
+#Work{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     
 }
 
 .card {
     display: flex;
     align-items: center;
-    padding: 20px;
     border-radius: 3px;
     margin-bottom: 20px;
+
+    
   }
   
   .logo {
@@ -237,6 +250,7 @@ h1, h2, h3, h4, h5, h6 {
   
   .content {
     flex: 1;
+    
   }
   
   .name {
@@ -255,15 +269,20 @@ h1, h2, h3, h4, h5, h6 {
   .description {
     font-size: 20px;
     margin-bottom: 8px;
+    max-width: 480px;
   }
     
   .work-description {
     font-size: 18px;
-    margin-bottom: 0px;
+    max-width: 480px;
   }
   
   .gpa {
     font-size: 14px;
     color: #888;
     font-style: italic;
+  }
+
+  ::selection {
+    background-color:  rgb(214, 162, 93); /* Optional: change the text color inside the selection */
   }
