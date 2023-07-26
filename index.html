@@ -176,66 +176,81 @@
         </div>
       </section>
 
-
       <section id="tech-stack">
-        <div class="about__header">
-          <h2>Tech Stack</h2>
+        <div class="about_wrapper">
+          <div class="about__header">
+            <h2>Tech Stack</h2>
+          </div>
+
+          <div class="items-wrapper">
+            <div class="tech-item">
+              <img src="images/aws.png" alt="aws.png" />
+              <span class="tech-name">Amazon Web Services</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/docker.png" alt="Docker" />
+              <span class="tech-name">Docker</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/kubernetes.png" alt="kubernetes" />
+              <span class="tech-name">Kubernetes</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/dotnet.png" alt="dotnet.png" />
+              <span class="tech-name">DOTNET</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/question_mark.png" alt ="question_mark" />
+              <span class="tech-name">Whatever you want me to learn!</span>
+              <div class="confetti"></div>
+            </div>
+          </div>
+          <div class="items-wrapper">
+            <div class="tech-item">
+              <img src="images/firebase.png" alt="firebase" />
+              <span class="tech-name">Firebase</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/mysql.jpg" alt="Mysql" />
+              <span class="tech-name">MYSQL</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/mongodb.png" alt="MongoDB" />
+              <span class="tech-name">MongoDB</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/electron.png" alt="Electron" />
+              <span class="tech-name">Electron</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/flutter.png" alt="Flutter" />
+              <span class="tech-name">Flutter</span>
+            </div>
+          </div>
+          <div class="items-wrapper">
+            <div class="tech-item">
+              <img src="images/Node.png" alt="Node js" />
+              <span class="tech-name">Node js</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/python.png" alt="Python" />
+              <span class="tech-name">Python</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/nextjs.png" alt="Next js" />
+              <span class="tech-name">Next js</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/C++.png" alt="C++" />
+              <span class="tech-name">C++</span>
+            </div>
+            <div class="tech-item">
+              <img src="images/rust.png" alt="Rust" />
+              <span class="tech-name">Rust</span>
+            </div>
+          </div>
         </div>
-        <div class= "items-wrapper">
-        <div class="tech-item">
-          <img src="images/docker.png" alt="Docker" />
-          <span class="tech-name">Docker</span>
-        </div>
-        <div class="tech-item">
-          <img src="images/kubernetes.png" alt="kubernetes" />
-          <span class="tech-name">Kubernetes</span>
-        </div>
-        <div class="tech-item">
-          <img src="images/Node.png" alt="Node js" />
-          <span class="tech-name">Node js</span>
-        </div>
-        <div class="tech-item">
-          <img src="images/C++.png" alt="C++" />
-          <span class="tech-name">C++</span>
-        </div>
-      </div>
-      <div class= "items-wrapper">
-        <div class="tech-item">
-          <img src="images/python.png" alt="Docker" />
-          <span class="tech-name">Docker</span>
-        </div>
-        <div class="tech-item">
-          <img src="images/nextjs.png" alt="Docker" />
-          <span class="tech-name">next js</span>
-        </div>
-        <div class="tech-item">
-          <img src="images/electron.png" alt="Docker" />
-          <span class="tech-name">Docker</span>
-        </div>
-        <div class="tech-item">
-          <img src="images/flutter.png" alt="Docker" />
-          <span class="tech-name">Docker</span>
-        </div>
-      </div>
-      <div class= "items-wrapper">
-        <div class="tech-item">
-          <img src="images/aws.png" alt="Docker" />
-          <span class="tech-name">Docker</span>
-        </div>
-        <div class="tech-item">
-          <img src="images/firebase.png" alt="Docker" />
-          <span class="tech-name">next js</span>
-        </div>
-        <div class="tech-item">
-          <img src="images/mysql.jpg" alt="Docker" />
-          <span class="tech-name">Docker</span>
-        </div>
-        <div class="tech-item">
-          <img src="images/mongodb.png" alt="Docker" />
-          <span class="tech-name">Docker</span>
-        </div>
-      </div>
-      
+
         <!-- Add more tech items as needed -->
       </section>
 
@@ -272,5 +287,51 @@
         });
       });
     </script>
+<script>
+  const techItems = document.querySelectorAll('.tech-item');
+
+  // Define an array of possible confetti colors
+  const confettiColors = ['#ffce00', '#ff6e00', '#ff004d', '#00a2ff', '#6eff00'];
+
+  techItems.forEach(item => {
+    const confettiContainer = item.querySelector('.confetti');
+
+    item.addEventListener('mouseenter', () => {
+      const confettiCount = 50; // Number of confetti particles to create
+
+      for (let i = 0; i < confettiCount; i++) {
+        const confettiParticle = document.createElement('div');
+        confettiParticle.classList.add('confetti-particle');
+
+        // Randomly select a color from the confettiColors array
+        const randomColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        confettiParticle.style.backgroundColor = randomColor;
+
+        // Randomly set velocities for X and Y directions
+        const angle = Math.random() * 360; // Random angle in degrees
+        const speed = Math.random() + 5; // Random speed between 5 and 25
+        const velocityX = speed * Math.cos(angle * (Math.PI / 180));
+        const velocityY = speed * Math.sin(angle * (Math.PI / 180));
+        confettiParticle.style.animation = `confetti-fall ${7}s ease-out`;
+
+        // Randomly position the confetti particles around the center
+        const centerX = item.offsetWidth / 2;
+        const centerY = item.offsetHeight / 2;
+        const randomX = centerX + (Math.random() - 0.5) * item.offsetWidth; // Range: -50% to +50%
+        const randomY = centerY + (Math.random() - 0.5) * item.offsetHeight; // Range: -50% to +50%
+        confettiParticle.style.left = `${randomX}px`;
+        confettiParticle.style.top = `${randomY}px`;
+
+        confettiContainer.appendChild(confettiParticle);
+
+        // Remove the confetti particle when the animation ends
+        confettiParticle.addEventListener('animationend', () => {
+          confettiContainer.removeChild(confettiParticle);
+        });
+      }
+    });
+  });
+</script>
+    
   </body>
 </html>
