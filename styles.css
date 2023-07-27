@@ -1,24 +1,14 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-}
+[data-theme="dark"] body{
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
+  background-color: #131212;
+  color: white;
 }
+[data-theme="dark"] header{
 
+  background-color: #181818;
+  color: white;
+}
 
 main {
     padding: 2rem;
@@ -48,7 +38,22 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #fff; /* Set the background color of the entire page to white */
+    background-color: #fffcf8; /* Set the background color of the entire page to white */
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+}
+
+/* Styles for the thumb (the draggable part of the scrollbar) */
+body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+/* Styles for the track (the background of the scrollbar) */
+body::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
 }
 
 header {
@@ -90,6 +95,63 @@ nav ul li a {
 nav ul li a:hover {
     color :#ff8000 ; 
 }
+
+.dark-mode-toggle{
+  padding: 0px; 
+  width: 0px;
+  height: 0px;
+  align-items: baseline;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide the default checkbox input */
+.switch input {
+  display: none;
+}
+
+/* Customize the slider */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Background color when switch is off */
+  border-radius: 34px;
+  transition: background-color 0.3s;
+}
+
+/* Customize the slider's round knob */
+.slider:before {
+  padding: 0px; 
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* Styles for the toggle switch when it's on (dark mode) */
+input:checked + .slider {
+  background-color: #ff8800; /* Background color when switch is on */
+}
+
+/* Styles for the round knob when switch is on (dark mode) */
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+
 #name {
     color: rgb(214, 162, 93); 
     font-size: auto;
@@ -259,6 +321,17 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
 }
+
+.project-card{
+ 
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  
+  
+}
+
 
 .card {
     display: flex;

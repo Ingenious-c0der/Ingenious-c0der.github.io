@@ -28,6 +28,12 @@
           <li><a href="#Projects">Projects</a></li>
           <li><a href="#interests">Interests</a></li>
           <li><a href="#resume">Resume</a></li>
+          <li class="dark-mode-toggle">
+            <label class="switch">
+              <input type="checkbox" id="toggle" />
+              <span class="slider round"></span>
+            </label>
+          </li>
         </ul>
       </nav>
     </header>
@@ -270,7 +276,7 @@
             </p>
             <p>Following are some of the highlights!</p>
           </div>
-          <div class="card">
+          <div class="project-card">
             <div class="logo">
               <img src="images/sih.jpg" alt="PyBots LLC Logo" />
             </div>
@@ -532,6 +538,25 @@
           }
         });
       });
+    </script>
+    <script>
+      const toggleSwitch = document.getElementById("toggle");
+toggleSwitch.addEventListener("change", function () {
+  if (this.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+});
+// Check local storage for the user's preference
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme) {
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  // Set the toggle switch position based on user's preference
+  if (currentTheme === "dark") {
+    toggleSwitch.checked = true;
+  }
+}
     </script>
   </body>
 </html>
