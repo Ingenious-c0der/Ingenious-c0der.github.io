@@ -151,13 +151,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .social-links a {
     margin: 0 15px; /* Add some spacing between the elements */
-}
+   
+  }
 
 .social-links i {
     font-size: 30px; /* Adjust the icon size as needed */
     color: rgb(214, 162, 93); 
+    transition: transform 0.3s; 
 }
-
+.social-links a:hover i {
+  transform: scale(1.1); /* Increase the scale on hover to 1.2 (20% larger) */
+}
 #about{
     margin-top:  320px;
     display: flex;
@@ -167,6 +171,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about__header{
+
     display: flex;
     justify-content: left;
     font-size: large;
@@ -242,6 +247,11 @@ h1, h2, h3, h4, h5, h6 {
 
     
 }
+#Projects{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .card {
     display: flex;
@@ -312,6 +322,23 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s, color 0.3s;
 
   }
+
+  
+  #githublink {
+    background-color: transparent;
+    text-decoration: none;
+    color: black;
+    border-bottom: #ff8000 2px dotted;
+    
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+  }
+  #githublink:hover {
+    
+    color: orange;
+  }
+
   
   #seeMoreLink:hover {
     
@@ -332,22 +359,29 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     
   }
+  .tech_stack__header{
+
+    display: flex;
+    justify-content: left;
+    font-size: large;
+    text-align: left;
+}
   
   .tech-item {
-    padding: 20px;
+    padding: 16px;
     transition: transform 0.3s;
-    justify-content: center;
+    
 
   }
   .items-wrapper{
-    padding: 30px; 
+    
     display: flex;
     max-width: 700px;
 
   }
   .tech-item img {
  
-    width: 100px;
+    width: 90px;
     height: auto;
     border-radius: 5%;
    
@@ -355,7 +389,7 @@ h1, h2, h3, h4, h5, h6 {
   
   .tech-name {
     position: absolute;
-    bottom: -25px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(245, 176, 72, 0.8);
