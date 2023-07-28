@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sagar Abhyankar Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+
+<main>
+<section id="Work">
+    <div class="about_wrapper">
+      <div class="about__header">
+        <h2>Work</h2>
+      </div>
+
+      <div class="card">
+        <div class="logo">
+          <img src="images/mcard.png" alt="Mastercard Logo" />
+        </div>
+        <div class="content">
+          <h2 class="name">Mastercard</h2>
+          <p class="duration">May 2023 - July 2023</p>
+          <p class="work-description">
+            SDE Intern at Security Operations Centre & Incident Response
+            <br />
+            Designed & Developed a scalable Rapid Incident Response System
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="logo">
+          <img src="images/bfserv.png" alt="Bajaj Finserv Logo" />
+        </div>
+        <div class="content">
+          <h2 class="name">Bajaj Finserv</h2>
+          <p class="duration">March 2023 - May 2023</p>
+          <p class="work-description">
+            Internship in blockchain development and security
+          </p>
+          <p class="work-description">
+            Developed a private blockchain using go ethereum on linux nodes
+            to support Bajaj Coin (A Cryptocurrency)
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="logo">
+          <img src="images/pict_logo.png" alt="pict Logo" />
+        </div>
+        <div class="content">
+          <h2 class="name">PICT Research Labs</h2>
+          <p class="duration">Mar 2023 - May 2023</p>
+          <p class="work-description">
+            Worked as a Research Intern at PICT Research Labs under the guidance of Prof. Sarang Joshi (Ph.D Algorithms,Computer Engineering) <br> My work included :
+            </p>
+
+          <p class="work-description">
+            Developing and analyzing performance of neurals nets <br>
+            Fusion models and logical models for image classification
+  
+          </p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="logo">
+          <img src="images/Pustakwale.png" alt="Pustakwale Logo" />
+        </div>
+        <div class="content">
+          <h2 class="name">Pustakwale</h2>
+          <p class="duration">Jan 2022 - May 2023</p>
+          <p class="work-description">
+            Worked as a SDE Intern at Pustakwale, My work included :
+            </p>
+          <p class="work-description">
+            • Developing a visit scheduler for the pop-up stores <br>
+            • Analyzing and Graphing the past visiting data. <br>
+            • Recommending an AI generated schedule for booking exhibitions across Pune City <br>
+          </p>
+          <p class="work-description">
+            • Maximizing the profit/month during schedule generation <br>
+            • Prioritized pop-up store sites based on multiple real world parameters
+          </p>
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="logo">
+          <img src="images/clointfusion.png" alt="clointfusion Logo" />
+        </div>
+        <div class="content">
+          <h2 class="name">Clointfusion</h2>
+          <p class="duration">Dec 2021 - Apr 2022</p>
+          <p class="work-description">
+            Worked as a Software R&D Intern
+            </p>
+          <p class="work-description">
+            • Developed RPA tool for collecting live information from different websites and taxing the data 
+            to a dashboard  <br>          
+            • Built an automation tool for automating the process of
+            data extraction from PDFs and Excel sheets <br>
+            • Designed python classes (Automating browser journeys) for the enterprise version of the tool, the opensource version of the tool can be found at 
+            clointfusion's github page <br>              
+            
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="logo">
+          <img src="images/TTMF.jpeg" alt="TMF Logo" />
+        </div>
+        <div class="content">
+          <h2 class="name">Tann Mann Foundation</h2>
+          <p class="duration">Oct 2021 - Jan022</p>
+          <p class="work-description">
+            Worked as a Software Developer/Contributor
+            </p>
+          <p class="work-description">
+            • Developed a fast face Recognition Script using TensorFlow framework
+• Handled the storage of images used for face pattern matching in Mongo DB Atlas.
+            
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+<script>
+  
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme) {
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    // Set the toggle switch position based on user's preference
+    if (currentTheme === "dark") {
+      toggleSwitch.checked = true;
+      
+    }
+  }
+</script>
+
+
+
+  </body>
+  </html> 
