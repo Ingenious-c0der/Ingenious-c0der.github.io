@@ -571,6 +571,25 @@ h1, h2, h3, h4, h5, h6 {
     color: orange;
   }
 
+  /* Style for the back button container */
+/* Style for the back button container */
+.back-button {
+  display: inline-flex;
+  align-items: left;
+  border: none;
+  color: #ffffff;
+  background-color: transparent;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: inherit; /* Use the same font as the page */
+}
+.back-button:hover {
+  color: #ffa850;
+}
+
+
 
 
   .confetti {

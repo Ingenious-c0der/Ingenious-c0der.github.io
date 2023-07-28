@@ -16,12 +16,19 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
 
 
 <main>
+
+  
 <section id="Work">
+  <button class="back-button">&#8592;
+    Back
+</button>
     <div class="about_wrapper">
+
       <div class="about__header">
         <h2>Work</h2>
       </div>
@@ -124,12 +131,12 @@
         </div>
         <div class="content">
           <h2 class="name">Tann Mann Foundation</h2>
-          <p class="duration">Oct 2021 - Jan022</p>
+          <p class="duration">Oct 2021 - Jan 2022</p>
           <p class="work-description">
             Worked as a Software Developer/Contributor
             </p>
           <p class="work-description">
-            • Developed a fast face Recognition Script using TensorFlow framework
+            • Developed a fast face Recognition Script using TensorFlow framework <br>
 • Handled the storage of images used for face pattern matching in Mongo DB Atlas.
             
           </p>
@@ -152,7 +159,16 @@
   }
 </script>
 
+<script>
+  // Get a reference to the back button element
+  const backButton = document.querySelector('.back-button');
 
+  // Add a click event listener to the back button
+  backButton.addEventListener('click', () => {
+    // Redirect to the "work" section in "index.html"
+    window.location.href = 'index.html#Work';
+  });
+</script>
 
   </body>
   </html> 
