@@ -4,10 +4,86 @@
   background-color: #131212;
   color: white;
 }
-[data-theme="dark"] header{
 
+
+[data-theme="dark"]  header {
   background-color: #181818;
-  color: white;
+  color: #f1ecec; /* Text color for the header */
+  padding: 1rem;
+  box-shadow:  0 3px 5px rgba(88, 54, 8, 0.1);
+}
+
+[data-theme="dark"] nav ul li a {
+  color: #e4ddddf1; /* Link color for the header */
+  text-decoration: none;
+  transition: cubic-bezier(1, 0, 0, 1) 0.15s;
+}
+
+[data-theme="dark"] .duration {
+  font-size: 14px;
+  color: #cecccc;
+  font-style: italic;
+  font-family : 'Montserrat', sans-serif; 
+  margin-bottom: 8px;
+  
+}
+
+
+[data-theme="dark"] .gpa {
+  font-size: 14px;
+  color: #cecdcd;
+  font-style: italic;
+}
+
+
+[data-theme="dark"] #seeMoreLink {
+  padding: 1px 2px;
+  background-color: transparent;
+  text-decoration: none;
+  color: rgb(211, 209, 209);
+  border-bottom: #ff8000 2px dotted;
+  
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+[data-theme="dark"] #githublink {
+  background-color: transparent;
+  text-decoration: none;
+  color: rgb(238, 235, 235);
+  border-bottom: #ff8000 2px dotted;
+  
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+
+[data-theme="dark"] .interests-toggle{
+   
+  background-color: transparent;
+  text-decoration: none;
+  color: rgb(216, 216, 216);
+  border-bottom: #ff8000 2px dotted;
+  
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+[data-theme="dark"] ::selection {
+  background-color:  rgb(80, 43, 0); /* Optional: change the text color inside the selection */
+}
+
+[data-theme="dark"] .interest-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(255, 158, 79, 0.1);
 }
 
 main {
@@ -23,7 +99,7 @@ section h2 {
 }
 
 footer {
-    background-color: #333;
+    background-color: #1f1e1e;
     color: #fff;
     text-align: center;
     font-size: smaller;
@@ -89,7 +165,7 @@ nav ul {
 nav ul li {
     display: inline;
     margin-left: 1rem;
-    
+    margin-top: 0rem;
 }
 
 nav ul li a {
@@ -231,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.1); /* Increase the scale on hover to 1.2 (20% larger) */
 }
 #about{
-    margin-top:  320px;
+    margin-top:  480px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -262,7 +338,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  max-width: 650px;
+  max-width: 660px;
 }
 
 #large-text{
@@ -285,10 +361,20 @@ h1, h2, h3, h4, h5, h6 {
         justify-content: center;
         margin-top: 50px; /* Stack the elements vertically when compressed */
     }
+    nav{
+      height: fit-content;
+    }
     #large-text{
         font-size: 20px;
         margin-top: 0px;
         padding-top: 0%;
+    }
+    .tech-item img {
+ 
+      width: 20px;
+      height: auto;
+      border-radius: 5%;
+     
     }
     .profile-picture {
         max-width: 35%; /* Remove the max-width on smaller screens to take full width */
@@ -368,7 +454,7 @@ h1, h2, h3, h4, h5, h6 {
   .logo img {
     max-width: 100px; /* Set the maximum width to maintain aspect ratio */
     height: auto; 
-    
+    border-radius: 5%;
   }
   
   .content {
