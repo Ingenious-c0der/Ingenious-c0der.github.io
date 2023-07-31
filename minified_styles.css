@@ -1,26 +1,23 @@
 [data-theme="dark"] body {
   background-color: #131212;
-  color: white;
+  color: #fff;
 }
-
 [data-theme="dark"] header {
   background-color: #181818;
   color: #f1ecec;
   padding: 1rem;
   box-shadow: 0 3px 5px rgba(88, 54, 8, 0.1);
 }
-
 [data-theme="dark"] nav ul li a {
   color: #e4ddddf1;
   text-decoration: none;
   transition: cubic-bezier(1, 0, 0, 1) 0.15s;
 }
-
 [data-theme="dark"] .duration {
   font-size: 14px;
   color: #cecccc;
   font-style: italic;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
   margin-bottom: 8px;
 }
 [data-theme="light"] .back-button {
@@ -35,84 +32,69 @@
   font-size: 20px;
   font-family: inherit;
 }
-
 [data-theme="dark"] .gpa {
   font-size: 14px;
   color: #cecdcd;
   font-style: italic;
 }
-
 [data-theme="dark"] #seeMoreLink {
   padding: 1px 2px;
   background-color: transparent;
   text-decoration: none;
-  color: rgb(211, 209, 209);
+  color: #d3d1d1;
   border-bottom: #ff8000 2px dotted;
-
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-
 [data-theme="dark"] #githublink {
   background-color: transparent;
   text-decoration: none;
-  color: rgb(238, 235, 235);
+  color: #eeebeb;
   border-bottom: #ff8000 2px dotted;
-
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-
 [data-theme="dark"] .interests-toggle {
   background-color: transparent;
   text-decoration: none;
-  color: rgb(216, 216, 216);
+  color: #d8d8d8;
   border-bottom: #ff8000 2px dotted;
-
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 [data-theme="dark"] ::selection {
-  background-color: rgb(80, 43, 0);
+  background-color: #502b00;
 }
-
 [data-theme="dark"] .interest-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   border-radius: 10px;
   padding: 30px;
   max-width: 600px;
   box-shadow: 0 4px 6px rgba(255, 158, 79, 0.1);
 }
-
-html,
-body {
+body,
+html {
   overflow-x: hidden;
 }
-
 main {
   padding: 2rem;
 }
-
 section {
   margin-bottom: 2rem;
 }
-
 section h2 {
   margin-bottom: 1rem;
 }
-
 footer {
   background-color: #1f1e1e;
   color: #fff;
   text-align: center;
   font-size: smaller;
 }
-
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -122,32 +104,24 @@ body {
   background-color: #fffcf8;
 }
 ::-webkit-scrollbar {
-  width: 10px; /* Width of the scrollbar */
+  width: 10px;
 }
-
-/* Styling the scrollbar handle (thumb) */
 ::-webkit-scrollbar-thumb {
-  background-color: #fabc6a; /* Color of the scrollbar handle */
-  border-radius: 5px; /* Rounded corners for the handle */
+  background-color: #fabc6a;
+  border-radius: 5px;
 }
-
-/* Styling the scrollbar track on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #ffa734; /* Color of the scrollbar handle on hover */
+  background-color: #ffa734;
 }
-
-/* Styling the scrollbar track when being dragged */
 ::-webkit-scrollbar-thumb:active {
-  background-color: #ff9100; /* Color of the scrollbar handle when being dragged */
+  background-color: #ff9100;
 }
-
 header {
-  background-color: #f5f5f5d3; /* Off-white color - adjust the shade as desired */
-  color: #333; /* Text color for the header */
+  background-color: #f5f5f5d3;
+  color: #333;
   padding: 1rem;
   box-shadow: 0 3px 5px rgba(88, 54, 8, 0.1);
 }
-
 header h1 {
   margin: 0;
   font-size: 2rem;
@@ -162,91 +136,70 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-
 nav ul li {
   display: inline;
   margin-left: 1rem;
-  margin-top: 0rem;
+  margin-top: 0;
 }
-
 nav ul li a {
   color: #020202f1;
   text-decoration: none;
   transition: cubic-bezier(1, 0, 0, 1) 0.15s;
-  padding: 0px;
+  padding: 0;
 }
-
 nav ul li a:hover {
   color: #ff8000;
 }
-
 #name {
-  color: rgb(214, 162, 93);
+  color: #d6a25d;
   font-size: auto;
-  font-weight: bold;
-  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
   float: left;
 }
-
 #intro {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 220px;
 }
-
 .short-intro {
-  margin-right: 15px; /* Add some space between the description and the profile picture */
-
+  margin-right: 15px;
   text-align: center;
 }
-
 .profile-picture {
-  max-width: 250px; /* Set the maximum width for the profile picture */
+  max-width: 250px;
 }
-
 .profile-picture img {
   display: block;
   width: 100%;
-  border-radius: 5%; /* Apply a circular shape to the profile picture */
-
+  border-radius: 5%;
   margin-left: 1px;
-
   box-shadow: 0 8px 10px rgba(77, 41, 1, 0.3);
 }
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: normal; /* Set the font weight to normal (non-bold) */
+  font-weight: 400;
 }
-
-.whitespace-before {
-  padding-left: 150px; /* Adjust the value as needed to add the desired whitespace before the <br> element */
-  /* or */
-  /* margin-top: 20px; */
-}
-
 .social-links {
   display: flex;
-  justify-content: center; /* To center the elements horizontally */
-  align-items: center; /* To center the elements vertically */
+  justify-content: center;
+  align-items: center;
 }
-
 .social-links a {
-  margin: 0 15px; /* Add some spacing between the elements */
+  margin: 0 15px;
 }
-
 .social-links i {
-  font-size: 30px; /* Adjust the icon size as needed */
-  color: rgb(214, 162, 93);
+  font-size: 30px;
+  color: #d6a25d;
   transition: transform 0.3s;
 }
 .social-links a:hover i {
-  transform: scale(1.1); /* Increase the scale on hover to 1.2 (20% larger) */
+  transform: scale(1.1);
 }
 #about {
   margin-top: 480px;
@@ -254,7 +207,6 @@ h6 {
   flex-direction: column;
   align-items: center;
 }
-
 .about__header {
   display: flex;
   justify-content: left;
@@ -267,7 +219,6 @@ h6 {
   font-size: large;
   text-align: left;
 }
-
 .about__description {
   display: flex;
   flex-direction: column;
@@ -280,18 +231,14 @@ h6 {
   justify-content: left;
   max-width: 660px;
 }
-
 #large-text {
   font-size: 30px;
-
   text-align: center;
 }
-
 #gem {
   float: left;
-  color: rgb(214, 162, 93);
+  color: #d6a25d;
 }
-
 @media screen and (max-width: 500px) {
   #intro {
     flex-direction: column-reverse;
@@ -304,8 +251,8 @@ h6 {
   }
   #large-text {
     font-size: 20px;
-    margin-top: 0px;
-    padding-top: 0%;
+    margin-top: 0;
+    padding-top: 0;
   }
   .tech-item img {
     width: 40px !important;
@@ -314,8 +261,8 @@ h6 {
   }
   .profile-picture {
     max-width: 35%;
-    margin-bottom: 0px;
-    padding-bottom: 0%;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   #about {
     margin-top: 200px;
@@ -324,8 +271,8 @@ h6 {
     align-items: center;
   }
   #short-intro {
-    margin-top: 0px;
-    padding-top: 0%;
+    margin-top: 0;
+    padding-top: 0;
   }
   .interest-card {
     display: flex;
@@ -337,10 +284,8 @@ h6 {
     max-width: 300px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
-
   .interest-image img {
     width: auto;
-
     border-radius: 10px;
     height: 120px !important;
   }
@@ -348,12 +293,10 @@ h6 {
     font-size: 18px;
     margin-bottom: 10px;
   }
-
   .interest-text {
     text-align: center;
     margin-top: 10px;
   }
-
   .interest-text p {
     font-size: 13px !important;
     line-height: 1;
@@ -365,7 +308,6 @@ h6 {
     margin-bottom: 20px;
   }
 }
-
 #Education {
   display: flex;
   flex-direction: column;
@@ -398,76 +340,62 @@ h6 {
     align-items: flex-start;
     border-bottom: 2px dotted #313130;
   }
-
   .logo {
     margin-right: 0;
     margin-bottom: 10px;
   }
-
   .name {
     font-size: 20px;
-    margin-right: 0; /* Remove the right margin on smaller devices */
+    margin-right: 0;
     margin-bottom: 8px;
   }
-
   .content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-
   .description {
     font-size: 16px;
     max-width: none;
   }
 }
-
 .card {
   display: flex;
   align-items: center;
   border-radius: 3px;
   margin-bottom: 20px;
 }
-
 .logo {
   flex: 0 0 auto;
-
   margin-right: 30px;
 }
-
 .logo img {
-  max-width: 100px; /* Set the maximum width to maintain aspect ratio */
+  max-width: 100px;
   height: auto;
   border-radius: 5%;
 }
-
 .content {
   flex: 1;
 }
-
 .name {
   font-size: 24px;
 }
-
 .duration {
   font-size: 14px;
   color: #888;
   font-style: italic;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
   margin-bottom: 8px;
 }
-
 .description {
   font-size: 20px;
   margin-bottom: 8px;
   max-width: 480px;
 }
-
 .work-description {
   font-size: 18px;
   max-width: 480px;
 }
-
 .gpa {
   font-size: 14px;
   color: #888;
@@ -476,43 +404,32 @@ h6 {
 .see-more {
   margin-top: 20px;
 }
-
 #seeMoreLink {
   padding: 1px 2px;
   background-color: transparent;
   text-decoration: none;
-  color: black;
+  color: #000;
   border-bottom: #ff8000 2px dotted;
-
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-
 #githublink {
   background-color: transparent;
   text-decoration: none;
-  color: black;
+  color: #000;
   border-bottom: #ff8000 2px dotted;
-
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 #githublink:hover {
   color: orange;
 }
-
 #seeMoreLink:hover {
   color: orange;
 }
-
 ::selection {
-  background-color: rgb(
-    247,
-    213,
-    169
-  ); /* Optional: change the text color inside the selection */
+  background-color: #f7d5a9;
 }
-
 #tech-stack {
   display: flex;
   align-items: center;
@@ -525,7 +442,6 @@ h6 {
   font-size: large;
   text-align: left;
 }
-
 .tech-item {
   padding: 16px;
   transition: transform 0.3s;
@@ -540,14 +456,13 @@ h6 {
   height: auto;
   border-radius: 5%;
 }
-
 .tech-name {
   position: absolute;
   bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(245, 176, 72, 0.8);
-  color: #000000;
+  color: #000;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 14px;
@@ -556,15 +471,12 @@ h6 {
   transition: opacity 0.3s;
   white-space: pre;
 }
-
 .tech-item:hover {
   transform: scale(1.1);
 }
-
 .tech-item:hover .tech-name {
   opacity: 1;
 }
-
 .interest-card {
   display: flex;
   flex-direction: column;
@@ -575,7 +487,6 @@ h6 {
   max-width: 600px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-
 .interest-image img {
   width: auto;
   object-fit: cover;
@@ -586,23 +497,19 @@ h6 {
   font-size: 18px;
   margin-bottom: 10px;
 }
-
 .interest-text {
   text-align: center;
   margin-top: 10px;
 }
-
 .interest-text p {
   font-size: 16px;
   line-height: 1.5;
 }
-
 .interests-toggle {
   background-color: transparent;
   text-decoration: none;
-  color: black;
+  color: #000;
   border-bottom: #ff8000 2px dotted;
-
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -614,24 +521,20 @@ h6 {
 .interests-content.show {
   max-height: 3000px;
 }
-
 .interests-toggle:hover {
   color: orange;
 }
-
-/* Style for the back button container */
-/* Style for the back button container */
 .back-button {
   display: inline-flex;
   align-items: left;
   border: none;
-  color: #ffffff;
+  color: #fff;
   background-color: transparent;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
-  font-family: inherit; /* Use the same font as the page */
+  font-family: inherit;
 }
 .back-button:hover {
   color: #ffa850;
@@ -646,7 +549,6 @@ h6 {
   overflow: hidden;
   z-index: 999;
 }
-
 .confetti-particle {
   position: absolute;
   width: 10px;
@@ -654,8 +556,6 @@ h6 {
   border-radius: 50%;
   animation: confetti-fall 5s ease-out;
 }
-
-/* Keyframes for the confetti animation */
 @keyframes confetti-fall {
   0% {
     transform: translateY(0) rotate(0);
@@ -669,8 +569,6 @@ h6 {
 .theme-switch input[type="checkbox"] {
   display: none;
 }
-
-/* Style the slider */
 .theme-switch .slider {
   position: relative;
   display: inline-block;
@@ -681,8 +579,6 @@ h6 {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-
-/* Style the slider's thumb (the circle) */
 .theme-switch .slider:before {
   content: "";
   position: absolute;
@@ -690,17 +586,13 @@ h6 {
   left: 2px;
   width: 22px;
   height: 22px;
-  background-color: white;
+  background-color: #fff;
   border-radius: 50%;
   transition: transform 0.2s;
 }
-
-/* Style the slider when checked (for dark theme) */
 .theme-switch input[type="checkbox"]:checked + .slider {
   background-color: #040018;
 }
-
-/* Move the thumb to the right when checked */
 .theme-switch input[type="checkbox"]:checked + .slider:before {
   transform: translateX(20px);
 }

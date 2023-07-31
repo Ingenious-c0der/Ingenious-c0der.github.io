@@ -15,7 +15,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css"
+    />
+    <link rel="stylesheet" href="minified_styles.css" />
   </head>
   <body>
     <header>
@@ -23,14 +27,16 @@
         <ul>
           <li id="name">Sagar Abhyankar</li>
           <li id="gem"><i class="fa fa-gem"></i></li>
+
           <li><a href="#about">About</a></li>
           <li><a href="#Work">Work</a></li>
           <li><a href="#Projects">Projects</a></li>
           <li><a href="#" target="_blank" id="resume-link">Resume</a></li>
-          <li class="dark-mode-toggle">
-            <label class="switch">
-              <input type="checkbox" id="toggle" />
-              <span class="slider round"></span>
+          <li class="theme-switch">
+            <input type="checkbox" id="toggleTheme" />
+            <label for="toggleTheme" class="slider">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
             </label>
           </li>
         </ul>
@@ -209,7 +215,7 @@
             </div>
             <div class="tech-item" id="tech-item-with-confetti">
               <img src="images/question_mark.png" alt="question_mark" />
-              <span class="tech-name" >Whatever you want me to learn!</span>
+              <span class="tech-name">Whatever you want me to learn!</span>
               <div class="confetti"></div>
             </div>
           </div>
@@ -299,11 +305,11 @@
                 The problem statement involved everything from capturing the
                 document without leaving any memory trace in the capturing
                 device, running ML algorithms for enhancing the document
-                quality,and finally designing a scalable server which can cater
+                quality, to finally designing a scalable server which can cater
                 to millions of requests per day.
               </p>
               <p class="about__description">
-                We developed server-less architecture using AWS lambda and AWS
+                We developed a server-less architecture using AWS lambda and AWS
                 API gateway to upload the images capable of handling around
                 10,000+ requests per second.Built a fully functional mobile
                 application using flutter for capturing document images, editing
@@ -341,9 +347,9 @@
                 candles,fireplace)
               </p>
               <p class="about__description">
-                The models which amalgamated the human engineered features with
-                its generated unknown weights performed better and had a human
-                baseline to classify an image incase it confronted any outlier
+                The models which amalgamated human engineered features with
+                its auto generated weights (unknown/blackbox) performed better and had a human
+                baseline to classify an image incase it confronted any outlying
                 data.
               </p>
               <p class="about__description">
@@ -377,7 +383,7 @@
                 The language is written in pure C++ and follows the standard
                 process of tokenization, parsing, abstract syntax tree
                 generation, topological resource sorting and then execution.
-                (does not used manually attached LLVM)
+                (does not use manually attached LLVM)
               </p>
               <p class="about__description">
                 Please feel free to try it out on your machine or open an issue
@@ -466,7 +472,7 @@
           <p>
             In the upcoming projects I will be building something in the
             neighborhood of the following pool of "buzzwords" with the intent of
-            exploring them. Cloud Security, Localized LLMs, OS and Embedded
+            exploring them.They are Cloud Security, Localized LLMs, OS and Embedded
             systems. If you find common interest in any of these domains, please
             feel free to reach out!
           </p>
@@ -485,7 +491,7 @@
           <div class="interests-content">
             <div class="about__description">
               <p>
-                Following are some of my interests which I pursue in my free
+                Following are some of my (non technical) interests which I pursue in my free
                 time.
               </p>
             </div>
@@ -507,7 +513,7 @@
                 </p>
               </div>
             </div>
-            
+
             <div class="interest-card">
               <h3 class="interest-heading">Digital Art</h3>
               <div class="interest-image">
@@ -515,11 +521,10 @@
               </div>
               <div class="interest-text">
                 <p>
-                  Digital Art is something I like to do out of curosity. "What
-                  would xyz look like?",Then I try to draw it out. The results
-                  are one of the images you can see above. There are others too,
-                  I will create a gallery preview soon. I am no artist, just an
-                  amatuer/hobbyist.
+                  Digital Art is something I like to do out of curosity as a complete Amatuer. The question "What would xyz look like?" 
+                  fuels my imagination, inspiring me to sketch it out.. 
+                  The resulting images are, like the one you can see above. I use Krita to make these drawings,
+                  and I am still learning how to use it.
                 </p>
               </div>
             </div>
@@ -533,8 +538,8 @@
                   I actively follow almost all of the space exploration programs
                   going around the world. I am very optimistic about the
                   multi-planetary future of humankind. The passion for space
-                  exploration vehicles stems from my liking for astrophysics and
-                  the wonders of this universe!
+                  exploration stems from my liking for astrophysics and
+                  the wonders that the universe holds.
                 </p>
               </div>
             </div>
@@ -549,16 +554,17 @@
               <div class="interest-text">
                 <p>
                   It may seem weird at first, but I find the topic of
-                  consciousness to be highly intriguing. Concsciousness, in my
+                  consciousness to be highly intriguing. Consciousness, in my
                   opinion, is the closest unexplored moon to mankind. I love
-                  reading about new research,books or philosophies around the
+                  reading about new research, books or philosophies around the
                   eternal questions of "What does it mean to be Alive?" "What
-                  really is Intelligence?" <br /> 
-                  With the advent of AI, these questions are becoming more and more relevant. 
+                  really is Intelligence?" <br />
+                  With the advent of AI, these questions are becoming more and
+                  more relevant.
                 </p>
               </div>
             </div>
-            
+
             <br />
           </div>
         </div>
@@ -640,46 +646,47 @@
         "#6eff00",
       ];
 
+      const confettiContainer = document.querySelector(
+        "#tech-item-with-confetti .confetti"
+      );
+      const item = document.querySelector("#tech-item-with-confetti");
+      item.addEventListener("mouseenter", () => {
+        const confettiCount = 50; // Number of confetti particles to create
 
-        const confettiContainer = document.querySelector("#tech-item-with-confetti .confetti");
-        const item = document.querySelector("#tech-item-with-confetti");
-        item.addEventListener("mouseenter", () => {
-          const confettiCount = 50; // Number of confetti particles to create
+        for (let i = 0; i < confettiCount; i++) {
+          const confettiParticle = document.createElement("div");
+          confettiParticle.classList.add("confetti-particle");
 
-          for (let i = 0; i < confettiCount; i++) {
-            const confettiParticle = document.createElement("div");
-            confettiParticle.classList.add("confetti-particle");
+          // Randomly select a color from the confettiColors array
+          const randomColor =
+            confettiColors[Math.floor(Math.random() * confettiColors.length)];
+          confettiParticle.style.backgroundColor = randomColor;
 
-            // Randomly select a color from the confettiColors array
-            const randomColor =
-              confettiColors[Math.floor(Math.random() * confettiColors.length)];
-            confettiParticle.style.backgroundColor = randomColor;
+          // Randomly set velocities for X and Y directions
+          const angle = Math.random() * 360; // Random angle in degrees
+          const speed = Math.random() + 5; // Random speed between 5 and 25
+          const velocityX = speed * Math.cos(angle * (Math.PI / 180));
+          const velocityY = speed * Math.sin(angle * (Math.PI / 180));
+          confettiParticle.style.animation = `confetti-fall ${7}s ease-out`;
 
-            // Randomly set velocities for X and Y directions
-            const angle = Math.random() * 360; // Random angle in degrees
-            const speed = Math.random() + 5; // Random speed between 5 and 25
-            const velocityX = speed * Math.cos(angle * (Math.PI / 180));
-            const velocityY = speed * Math.sin(angle * (Math.PI / 180));
-            confettiParticle.style.animation = `confetti-fall ${7}s ease-out`;
+          // Randomly position the confetti particles around the center
+          const centerX = item.offsetWidth / 2;
+          const centerY = item.offsetHeight / 2;
+          const randomX = centerX + (Math.random() - 0.5) * item.offsetWidth; // Range: -50% to +50%
+          const randomY = centerY + (Math.random() - 0.5) * item.offsetHeight; // Range: -50% to +50%
+          confettiParticle.style.left = `${randomX}px`;
+          confettiParticle.style.top = `${randomY}px`;
 
-            // Randomly position the confetti particles around the center
-            const centerX = item.offsetWidth / 2;
-            const centerY = item.offsetHeight / 2;
-            const randomX = centerX + (Math.random() - 0.5) * item.offsetWidth; // Range: -50% to +50%
-            const randomY = centerY + (Math.random() - 0.5) * item.offsetHeight; // Range: -50% to +50%
-            confettiParticle.style.left = `${randomX}px`;
-            confettiParticle.style.top = `${randomY}px`;
+          confettiContainer.appendChild(confettiParticle);
 
-            confettiContainer.appendChild(confettiParticle);
+          // Remove the confetti particle when the animation ends
+          confettiParticle.addEventListener("animationend", () => {
+            confettiContainer.removeChild(confettiParticle);
+          });
+        }
+      });
 
-            // Remove the confetti particle when the animation ends
-            confettiParticle.addEventListener("animationend", () => {
-              confettiContainer.removeChild(confettiParticle);
-            });
-          }
-        });
-
-      const toggleSwitch = document.getElementById("toggle");
+      const toggleSwitch = document.getElementById("toggleTheme");
       toggleSwitch.addEventListener("change", function () {
         if (this.checked) {
           document.documentElement.setAttribute("data-theme", "dark");
