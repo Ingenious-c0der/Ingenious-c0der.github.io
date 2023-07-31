@@ -260,9 +260,16 @@ h6 {
     border-radius: 5%;
   }
   .profile-picture {
-    max-width: 35%;
+    max-width: 45%;
     margin-bottom: 0;
     padding-bottom: 0;
+    
+  }
+  .pp_holder{
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
+    padding-right:17px;
   }
   #about {
     margin-top: 200px;
