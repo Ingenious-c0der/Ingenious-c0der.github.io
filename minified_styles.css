@@ -579,7 +579,7 @@ h6 {
 .theme-switch .slider {
   position: relative;
   display: inline-block;
-  width: 40px;
+  width: 45px;
   height: 25px;
   background-color: #ffd08a;
   border-radius: 20px;
@@ -602,4 +602,8 @@ h6 {
 }
 .theme-switch input[type="checkbox"]:checked + .slider:before {
   transform: translateX(20px);
+}
+
+.fas fa-sun {
+  color: #ffd08a;
 }
