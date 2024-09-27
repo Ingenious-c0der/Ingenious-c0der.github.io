@@ -87,6 +87,24 @@ section {
 section h2 {
   margin-bottom: 1rem;
 }
+.illini-text {
+  background: linear-gradient(90deg, #FF6600, #007AFF); /* Orange to Blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  background-size: 200%; /* Makes the gradient twice as wide */
+  background-position: 0%; /* Start the gradient from the left */
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 280%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
 footer {
   background-color: #1f1e1e;
   color: #fff;
