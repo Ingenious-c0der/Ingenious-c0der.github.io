@@ -194,7 +194,7 @@ nav ul li a:hover {
   border-radius: 5%;
   margin-left: 1px;
   box-shadow: 0 8px 10px rgba(77, 41, 1, 0.3);
-  content: url("images/profile_pic_new.jpg");
+  content: url("images/IMG_0985.JPG");
 }
 [data-theme="dark"] .profile-picture img {
   display: block;
