@@ -1,9 +1,9 @@
 [data-theme="dark"] body {
-  background-color: #131212;
+  background-color: #151313;
   color: #fff;
 }
 [data-theme="dark"] header {
-  background-color: #181818;
+  background-color: #282727;
   color: #f1ecec;
   padding: 1rem;
   box-shadow: 0 3px 5px rgba(88, 54, 8, 0.1);
@@ -202,7 +202,7 @@ nav ul li a:hover {
   border-radius: 5%;
   margin-left: 1px;
   box-shadow: 0 8px 10px rgba(77, 41, 1, 0.3);
-  content: url("images/IMG_0729.JPG");
+  content: url("images/IMG_1164.JPG");
 }
 h1,
 h2,
