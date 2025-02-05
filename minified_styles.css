@@ -184,10 +184,15 @@ nav ul li a:hover {
   align-items: center;
   justify-content: center;
   margin-top: 80px;
+
 }
 .short-intro {
   margin-right: 35px;
   text-align: center;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  /* border-top: orange 2px dotted;
+  border-bottom: orange 2px dotted; */
   
 }
 .profile-picture {
@@ -196,7 +201,7 @@ nav ul li a:hover {
 .profile-picture img {
   display: block;
   width: 100%; 
-  border-radius: 5%;
+  border-radius: 3%;
   margin-left: 1px;
   box-shadow: 0 8px 10px rgba(77, 41, 1, 0.3);
   content: url("images/profile_pic_second.jpg");
@@ -204,7 +209,7 @@ nav ul li a:hover {
 [data-theme="dark"] .profile-picture img {
   display: block;
   width: 100%;
-  border-radius: 5%;
+  border-radius: 3%;
   margin-left: 1px;
   box-shadow: 0 8px 10px rgba(77, 41, 1, 0.3);
   content: url("images/IMG_1164.jpg");
@@ -294,7 +299,7 @@ h6 {
     margin-top: 50px;
   }
   .location-time-container {
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -305,6 +310,24 @@ h6 {
     width: fit-content;
     gap: 23px;
   }
+  .location-container{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: fit-content;
+  }
+  .time-container{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: fit-content;
+  }
   nav {
     height: fit-content;
   }
@@ -312,6 +335,8 @@ h6 {
     font-size: 20px;
     margin-top: 0;
     padding-top: 0;
+    align-items: center;
+    justify-content: center;
   }
   .tech-item img {
     width: 40px !important;
@@ -329,7 +354,7 @@ h6 {
     justify-content: center;
     max-width: 300px;
     align-items: center;
- 
+    padding-top: 10px;
   }
   #about {
     margin-top: 200px;
@@ -337,11 +362,12 @@ h6 {
     flex-direction: column;
     align-items: center;
   }
-  #short-intro {
-    margin-top: 0;
-    margin-left: 30px;
+  .short-intro {
     padding-top: 10px;
-
+    padding-bottom: 10px;
+    margin-right: 0px;
+    /* border-top: orange 2px dotted;
+    border-bottom: orange 2px dotted; */
   }
   .interest-card {
     display: flex;
@@ -377,6 +403,29 @@ h6 {
     margin-bottom: 20px;
    
   }
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 2px dotted #313130;
+  }
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .name {
+    font-size: 14px;
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .description {
+    font-size: 16px;
+    max-width: none;
+  }
 }
 #Education {
   display: flex;
@@ -403,31 +452,6 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-@media screen and (max-width: 500px) {
-  .card {
-    flex-direction: column;
-    align-items: flex-start;
-    border-bottom: 2px dotted #313130;
-  }
-  .logo {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  .name {
-    font-size: 14px;
-    margin-right: 0;
-    margin-bottom: 8px;
-  }
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .description {
-    font-size: 16px;
-    max-width: none;
-  }
 }
 .card {
   display: flex;
