@@ -427,6 +427,8 @@ h6 {
   align-items: center;
   border-radius: 3px;
   margin-bottom: 20px;
+  border: 2px dotted orange; /* Adds a small dotted orange border */
+  padding: 10px; /* Optional: Ensures content does not touch the border */
 }
 
 .logo {
