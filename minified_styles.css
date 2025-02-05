@@ -415,7 +415,7 @@ h6 {
     margin-bottom: 10px;
   }
   .name {
-    font-size: 20px;
+    font-size: 14px;
     margin-right: 0;
     margin-bottom: 8px;
   }
@@ -456,7 +456,7 @@ h6 {
   flex: 1;
 }
 .name {
-  font-size: 24px;
+  font-size: 22px;
 }
 .duration {
   font-size: 14px;
