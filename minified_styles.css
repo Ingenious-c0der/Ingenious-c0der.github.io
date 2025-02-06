@@ -728,3 +728,112 @@ h6 {
 .time {
   font-weight: 400;
 }
+
+/* Starry Background */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Ensure it doesn't interfere with interactions */
+  background: transparent;
+  z-index : -1;
+}
+
+.star {
+  position: absolute;
+  border-radius: 70%;
+  opacity: 0;
+  animation: blink 2s infinite alternate ease-in-out;
+}
+
+/* Blinking effect */
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@media (data-theme: dark) {
+  .stars {
+    display: block;
+  }
+}
+
+[data-theme="light"] .stars {
+  display: none !important;
+}
+
+[data-theme="light"] .falling-star {
+  display: none !important;
+}
+
+/* Falling star container */
+.falling-star {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: white;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Glow effect */
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(-45deg); /* Tilted movement */
+  z-index: -1;
+}
+
+/* Animation for falling star */
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(300px, 150px) scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(500px, 250px) scale(0);
+  }
+}
+#feather {
+  rotate: -90deg;
+}
+/* 
+.fa-icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  z-index : -1;
+}
+
+[data-theme="dark"] .fa-icons-container {
+  display: none; 
+}
+
+.fa-icon {
+  position: absolute;
+  opacity: 1;
+  font-size: 5px; 
+  color:  #d6a25d;
+  animation: popOut 2s infinite alternate ease-in-out;
+}
+
+@keyframes popOut {
+  0% {
+    opacity: 1;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2) ;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+} */

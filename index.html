@@ -34,7 +34,7 @@
       <nav>
         <ul>
           <li id="name">Sagar Abhyankar</li>
-          <li id="feather"><i class="fa-solid fa-feather"></i></li>
+          <li id="feather"><i class="fa-solid fa-shuttle-space"></i></li>
           <li><a href="#about">About</a></li>
           <li><a href="#Work">Work</a></li>
           <li><a href="#Projects">Projects</a></li>
@@ -51,7 +51,10 @@
     </header>
 
     <main>
+      <div class="stars"></div>
+      
       <section id="intro">
+        <div class="fa-icons-container"></div>
         <div class="short-intro">
           <h2 id="large-text">
             <span class="illini-text">An Illini</span><br />
@@ -941,6 +944,111 @@ setInterval(updateTime, 60000);
 
 // Set initial time immediately when page loads
 updateTime();
+
+const starContainer = document.querySelector('.stars');
+const numStars = 30; // Number of stars
+const colors = ["#1E3A8A", "#FACC15", "#FFFFFF",  "#FFFFFF" ,  "#FFFFFF"]; // Dark blue, purple, red, yellow, green
+for (let i = 0; i < numStars; i++) {
+  const star = document.createElement('div');
+  star.classList.add('star');
+  const size = Math.random() * 3 + 2; // 2px - 5px
+  star.style.width = `${size}px`;
+  star.style.height = `${size}px`;
+
+  // Random color from the list
+  star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+  // Random position
+  star.style.top = `${Math.random() * 100}vh`;
+  star.style.left = `${Math.random() * 100}vw`;
+
+  // Random blink delay for natural effect
+  star.style.animationDelay = `${Math.random() * 5 }s`;
+  star.style.animationDuration = `${Math.random() * 6 + 10}s`;
+
+  starContainer.appendChild(star);
+}
+
+function createFallingStar() {
+    const star = document.createElement("div");
+    star.classList.add("falling-star");
+
+    // Random starting position (from top to middle)
+    const startX = Math.random() * window.innerWidth;  
+    const startY = Math.random() * (window.innerHeight / 2);  
+
+    // Random end position (somewhere off-screen)
+    const endX = startX + (Math.random() * 300 + 300); 
+    const endY = startY + (Math.random() * 200 + 300);
+
+    // Set initial position
+    star.style.left = `${startX}px`;
+    star.style.top = `${startY}px`;
+
+    // Append to body
+    document.body.appendChild(star);
+
+    // Animate with JS (faster than CSS for random movements)
+    star.animate(
+        [
+            { transform: `translate(0, 0) scale(1)`, opacity: 1 },
+            { transform: `translate(${endX - startX}px, ${endY - startY}px) scale(1.5)`, opacity: 1 },
+            { transform: `translate(${endX - startX}px, ${endY - startY}px) scale(0)`, opacity: 0 }
+        ],
+        { duration: 2000, easing: "ease-in-out" }
+    );
+
+    // Remove element after animation
+    setTimeout(() => star.remove(), 2100);
+}
+
+// Create a new falling star every 10-20 seconds
+setInterval(() => {
+    if (document.documentElement.getAttribute("data-theme") === "dark") {
+        createFallingStar();
+    }
+}, Math.random() * 10000 + 30000);  // 10-20s interval
+ // Function to generate random Font Awesome icons
+//  function createRandomIcons() {
+//   const container = document.querySelector('.fa-icons-container');
+//   const numIcons = 10; // Number of icons to generate
+
+//   // List of Font Awesome icons you want to use
+//   const iconTypes = ['fa-sun', 'fa-star', 'fa-cogs', 'fa-cloud', 'fa-leaf', 'fa-ghost', 'fa-snowflake', 'fa-heart'];
+
+//   // Generate 10 random icons
+//   for (let i = 0; i < numIcons; i++) {
+//     const iconClass = iconTypes[Math.floor(Math.random() * iconTypes.length)];
+
+//     // Create an icon element
+//     const icon = document.createElement('i');
+//     icon.classList.add('fa', iconClass, 'fa-icon');
+
+//     // Set random size, position, delay, and duration
+//     const size = Math.random() * 12 + 5; // Random size between 5px and 17px
+//     const left = Math.random() * 100; // Random position on X axis
+//     const top = Math.random() * 100; // Random position on Y axis
+//     const delay = Math.random() * 2; // Random delay for animation
+//     const duration = Math.random() * 2 + 2; // Random duration for fade out effect
+
+//     icon.style.fontSize = `${size}px`;
+//     icon.style.left = `${left}%`;
+//     icon.style.top = `${top}%`;
+//     icon.style.animationDelay = `${delay}s`;
+//     icon.style.animationDuration = `${duration}s`;
+
+//     // Append the icon to the container
+//     container.appendChild(icon);
+
+//     // Remove the icon after animation is complete to avoid memory leaks
+//     icon.addEventListener('animationend', () => {
+//       icon.remove();
+//     });
+//   }
+// }
+
+// // Call the function every 3 seconds to generate new icons in batches
+// setInterval(createRandomIcons, 3000);
     </script>
   </body>
 </html>
