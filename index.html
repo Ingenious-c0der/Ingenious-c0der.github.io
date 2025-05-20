@@ -94,7 +94,7 @@
           <div class="time-container">
             <i class="fa-regular fa-clock"></i>
             <span id="local-time"></span>
-            <span class="time" id="time"></span>
+           
         </div>
         
       </div>
@@ -848,6 +848,28 @@
     </footer>
 
     <script>
+
+
+      function updateUrbanaTime() {
+          const time_options = {
+              timeZone: 'America/Chicago',
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: true
+          };
+          const weekday_options = {
+              weekday: 'long',
+          };
+          const urbanaTime = `${new Intl.DateTimeFormat('en-US', weekday_options).format(new Date())}, ${new Intl.DateTimeFormat('en-US', time_options).format(new Date())}`; 
+         
+          document.getElementById('local-time').textContent = urbanaTime;
+      }
+
+      // Update time immediately
+      updateUrbanaTime();
+
+      // Update time every second
+      setInterval(updateUrbanaTime, 60000);
       // Add smooth scrolling to the navigation links
       const navLinks = document.querySelectorAll("nav a");
 
@@ -955,124 +977,70 @@
         interestsContent.classList.toggle("show");
       }
 
-      function updateTime() {
-      const now = new Date();
-      const options = { weekday: "long"};
-      const time_options = { hour: "2-digit", minute: "2-digit" };
-      const timeString = now.toLocaleTimeString("en-US", time_options);
-      document.getElementById("time").textContent = `${now.toLocaleDateString("en-US", { weekday: "long" })}, ${timeString}`;
-}
 
-// Update time every second
-setInterval(updateTime, 60000);
+      const starContainer = document.querySelector('.stars');
+      const numStars = 30; // Number of stars
+      const colors = ["#1E3A8A", "#FACC15", "#FFFFFF",  "#FFFFFF" ,  "#FFFFFF"]; // Dark blue, purple, red, yellow, green
+      for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const size = Math.random() * 3 + 2; // 2px - 5px
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
 
-// Set initial time immediately when page loads
-updateTime();
+        // Random color from the list
+        star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 
-const starContainer = document.querySelector('.stars');
-const numStars = 30; // Number of stars
-const colors = ["#1E3A8A", "#FACC15", "#FFFFFF",  "#FFFFFF" ,  "#FFFFFF"]; // Dark blue, purple, red, yellow, green
-for (let i = 0; i < numStars; i++) {
-  const star = document.createElement('div');
-  star.classList.add('star');
-  const size = Math.random() * 3 + 2; // 2px - 5px
-  star.style.width = `${size}px`;
-  star.style.height = `${size}px`;
+        // Random position
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.left = `${Math.random() * 100}vw`;
 
-  // Random color from the list
-  star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        // Random blink delay for natural effect
+        star.style.animationDelay = `${Math.random() * 5 }s`;
+        star.style.animationDuration = `${Math.random() * 6 + 10}s`;
 
-  // Random position
-  star.style.top = `${Math.random() * 100}vh`;
-  star.style.left = `${Math.random() * 100}vw`;
+        starContainer.appendChild(star);
+      }
 
-  // Random blink delay for natural effect
-  star.style.animationDelay = `${Math.random() * 5 }s`;
-  star.style.animationDuration = `${Math.random() * 6 + 10}s`;
+      function createFallingStar() {
+          const star = document.createElement("div");
+          star.classList.add("falling-star");
 
-  starContainer.appendChild(star);
-}
+          // Random starting position (from top to middle)
+          const startX = Math.random() * window.innerWidth;  
+          const startY = Math.random() * (window.innerHeight / 2);  
 
-function createFallingStar() {
-    const star = document.createElement("div");
-    star.classList.add("falling-star");
+          // Random end position (somewhere off-screen)
+          const endX = startX + (Math.random() * 300 + 300); 
+          const endY = startY + (Math.random() * 200 + 300);
 
-    // Random starting position (from top to middle)
-    const startX = Math.random() * window.innerWidth;  
-    const startY = Math.random() * (window.innerHeight / 2);  
+          // Set initial position
+          star.style.left = `${startX}px`;
+          star.style.top = `${startY}px`;
 
-    // Random end position (somewhere off-screen)
-    const endX = startX + (Math.random() * 300 + 300); 
-    const endY = startY + (Math.random() * 200 + 300);
+          // Append to body
+          document.body.appendChild(star);
 
-    // Set initial position
-    star.style.left = `${startX}px`;
-    star.style.top = `${startY}px`;
+          // Animate with JS (faster than CSS for random movements)
+          star.animate(
+              [
+                  { transform: `translate(0, 0) scale(1)`, opacity: 1 },
+                  { transform: `translate(${endX - startX}px, ${endY - startY}px) scale(1.5)`, opacity: 1 },
+                  { transform: `translate(${endX - startX}px, ${endY - startY}px) scale(0)`, opacity: 0 }
+              ],
+              { duration: 2000, easing: "ease-in-out" }
+          );
 
-    // Append to body
-    document.body.appendChild(star);
+          // Remove element after animation
+          setTimeout(() => star.remove(), 2100);
+      }
 
-    // Animate with JS (faster than CSS for random movements)
-    star.animate(
-        [
-            { transform: `translate(0, 0) scale(1)`, opacity: 1 },
-            { transform: `translate(${endX - startX}px, ${endY - startY}px) scale(1.5)`, opacity: 1 },
-            { transform: `translate(${endX - startX}px, ${endY - startY}px) scale(0)`, opacity: 0 }
-        ],
-        { duration: 2000, easing: "ease-in-out" }
-    );
-
-    // Remove element after animation
-    setTimeout(() => star.remove(), 2100);
-}
-
-// Create a new falling star every 10-20 seconds
-setInterval(() => {
-    if (document.documentElement.getAttribute("data-theme") === "dark") {
-        createFallingStar();
-    }
-}, Math.random() * 10000 + 30000);  // 10-20s interval
- // Function to generate random Font Awesome icons
-//  function createRandomIcons() {
-//   const container = document.querySelector('.fa-icons-container');
-//   const numIcons = 10; // Number of icons to generate
-
-//   // List of Font Awesome icons you want to use
-//   const iconTypes = ['fa-sun', 'fa-star', 'fa-cogs', 'fa-cloud', 'fa-leaf', 'fa-ghost', 'fa-snowflake', 'fa-heart'];
-
-//   // Generate 10 random icons
-//   for (let i = 0; i < numIcons; i++) {
-//     const iconClass = iconTypes[Math.floor(Math.random() * iconTypes.length)];
-
-//     // Create an icon element
-//     const icon = document.createElement('i');
-//     icon.classList.add('fa', iconClass, 'fa-icon');
-
-//     // Set random size, position, delay, and duration
-//     const size = Math.random() * 12 + 5; // Random size between 5px and 17px
-//     const left = Math.random() * 100; // Random position on X axis
-//     const top = Math.random() * 100; // Random position on Y axis
-//     const delay = Math.random() * 2; // Random delay for animation
-//     const duration = Math.random() * 2 + 2; // Random duration for fade out effect
-
-//     icon.style.fontSize = `${size}px`;
-//     icon.style.left = `${left}%`;
-//     icon.style.top = `${top}%`;
-//     icon.style.animationDelay = `${delay}s`;
-//     icon.style.animationDuration = `${duration}s`;
-
-//     // Append the icon to the container
-//     container.appendChild(icon);
-
-//     // Remove the icon after animation is complete to avoid memory leaks
-//     icon.addEventListener('animationend', () => {
-//       icon.remove();
-//     });
-//   }
-// }
-
-// // Call the function every 3 seconds to generate new icons in batches
-// setInterval(createRandomIcons, 3000);
+      // Create a new falling star every 10-20 seconds
+      setInterval(() => {
+          if (document.documentElement.getAttribute("data-theme") === "dark") {
+              createFallingStar();
+          }
+      }, Math.random() * 10000 + 30000);  // 10-20s interval
     </script>
   </body>
 </html>
