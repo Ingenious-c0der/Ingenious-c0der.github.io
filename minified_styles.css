@@ -474,18 +474,29 @@ a:hover {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        height: 100vh;   /* Works consistently across browsers */
+        height: 100vh;  
         min-height: 0;
     }
 
+    .layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+        
     .left-panel {
-        position: relative;
+        position: static;
         width: 100%;
+        flex: 0 0 auto;      /* <-- prevents squishing */
         height: auto;
-        padding: 30px 20px;
+        padding-bottom: 20px; /* optional spacing below */
     }
 
     .right-panel {
+        height: auto;
+        min-height: unset;
+        overflow-y: visible;   /* stop trapping scroll */
+        -webkit-overflow-scrolling: auto;
         margin-left: 0;
         padding: 30px 20px;
     }
@@ -509,6 +520,7 @@ a:hover {
         gap: 15px;
     }
 }
+
 
 /* Stars Background */
 .stars {
