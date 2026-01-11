@@ -5,7 +5,15 @@
 }
 
 html {
+    scroll-behavior: smooth !important;
+}
+
+.right-panel {
     scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 25px;
 }
 
 :root {
@@ -16,6 +24,7 @@ html {
     --accent: #d6a25d;
     --accent-hover: #ff8000;
     --left-panel-width: 500px;
+    --profile-pic-max: 450px;
 }
 
 /* 🌞 Light Theme Overrides */
@@ -72,6 +81,9 @@ body {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    width: var(--left-panel-width);
+    flex: 0 0 var(--left-panel-width);
+    /* prevents flex shrink issues */
     /* Ensures padding doesn't add to width */
 }
 
@@ -90,7 +102,7 @@ body {
 
 /* Profile Section */
 .profile-picture {
-    max-width: 450px;
+    max-width: var(--profile-pic-max);
 }
 
 .profile-picture img {
@@ -99,6 +111,7 @@ body {
     border-radius: 3%;
     margin-left: 1px;
     box-shadow: 0 8px 10px rgba(77, 41, 1, 0.3);
+    max-width: var(--profile-pic-max);
     content: url("images/gate_bridge.png");
 }
 
@@ -245,21 +258,31 @@ body {
 
 /* Scrollable Right Panel */
 .right-panel {
-  margin-left: var(--left-panel-width);
-  flex: 1;
+    margin-left: var(--left-panel-width);
+    flex: 1;
 
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  height: 100vh;      /* Chrome-friendly */
-  min-height: 0;
+    height: 100vh;
+    /* Chrome-friendly */
+    min-height: 0;
 
-  padding: 60px 80px;
-  overflow-y: auto;
-  box-sizing: border-box;
+    padding: 60px 0;
+    overflow-y: auto;
+    box-sizing: border-box;
 
-  scrollbar-gutter: stable;
-  -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
+    -webkit-overflow-scrolling: touch;
+}
+
+.right-content {
+    max-width: 1100px;
+    /* sweet spot for reading */
+    margin: 0 auto;
+    /* center horizontally */
+    padding: 0 30px;
+    /* inner horizontal padding */
 }
 
 
@@ -273,22 +296,23 @@ body {
 
 /* WebKit scrollbar (Chrome / Safari) */
 .right-panel::-webkit-scrollbar {
-  width: 4px;
+    width: 4px;
 }
 
 .right-panel::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 .right-panel::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 2px;
+    background: #555;
+    border-radius: 2px;
 }
 
 /* Optional hover for dark mode */
 .right-panel::-webkit-scrollbar-thumb:hover {
-  background: #777;
+    background: #777;
 }
+
 [data-theme="light"] .right-panel::-webkit-scrollbar-thumb {
     background-color: #fabc6a;
 }
@@ -461,8 +485,8 @@ a:hover {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .left-panel {
-        width: 300px;
+    :root {
+        --left-panel-width: 300px;
     }
 
     .right-panel {
@@ -474,7 +498,7 @@ a:hover {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        height: 100vh;  
+        height: 100vh;
         min-height: 0;
     }
 
@@ -483,19 +507,22 @@ a:hover {
         flex-direction: column;
     }
 
-        
+
     .left-panel {
         position: static;
         width: 100%;
-        flex: 0 0 auto;      /* <-- prevents squishing */
+        flex: 0 0 auto;
+        /* <-- prevents squishing */
         height: auto;
-        padding-bottom: 20px; /* optional spacing below */
+        padding-bottom: 20px;
+        /* optional spacing below */
     }
 
     .right-panel {
         height: auto;
         min-height: unset;
-        overflow-y: visible;   /* stop trapping scroll */
+        overflow-y: visible;
+        /* stop trapping scroll */
         -webkit-overflow-scrolling: auto;
         margin-left: 0;
         padding: 30px 20px;
@@ -690,33 +717,34 @@ a:hover {
 
 /* Starlink train dots */
 .starlink-sat {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0 12px #fff, 0 0 24px rgba(173, 216, 255, 0.7);
-  pointer-events: none;
-  z-index: -1;
-  /* START VISIBLE */
-  opacity: 1;
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 12px #fff, 0 0 24px rgba(173, 216, 255, 0.7);
+    pointer-events: none;
+    z-index: -1;
+    /* START VISIBLE */
+    opacity: 1;
 }
 
 .starlink-label {
-  position: fixed;
-  font-size: 10px;
-  font-family: monospace;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 0 0 6px #000;
-  padding: 2px 6px;
-  background: rgba(0,0,0,0.5);
-  border-radius: 4px;
-  pointer-events: none;
-  z-index: -1;
-  /* START VISIBLE */
-  opacity: 1;
+    position: fixed;
+    font-size: 10px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 6px #000;
+    padding: 2px 6px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: -1;
+    /* START VISIBLE */
+    opacity: 1;
 }
+
 /* Hide in light mode */
 [data-theme="light"] .starlink-sat,
 [data-theme="light"] .starlink-label {
@@ -741,43 +769,87 @@ a:hover {
 
 /* Horizontal decoration with floating satellite */
 .panel-decor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  gap: 10px;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    width: 100%;
 }
 
 .panel-decor::before,
 .panel-decor::after {
-  content: "";
-  flex: 1;
-  height: 2px;
-  background: var(--accent);
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: var(--accent);
 }
 
 /* Satellite icon styling */
 .sat-icon {
-  display: inline-block;
-  font-size: 18px;
-  color: var(--accent);
-  animation: float 2s ease-in-out infinite alternate;
+    display: inline-block;
+    font-size: 18px;
+    color: var(--accent);
+    animation: float 2s ease-in-out infinite alternate;
 }
 
 /* Floating animation */
 @keyframes float {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-3px) rotate(5deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-3px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
 }
 
 /* Optional: adjust color in light mode */
 [data-theme="light"] .sat-icon {
-  color: var(--accent-hover);
+    color: var(--accent-hover);
 }
 
 [data-theme="light"] .panel-decor::before,
 [data-theme="light"] .panel-decor::after {
-  background: var(--accent-hover);
+    background: var(--accent-hover);
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --left-panel-width: 560px;
+    }
+}
+
+@media (min-width: 1800px) {
+    :root {
+        --left-panel-width: 700px;
+    }
+}
+
+@media (min-width: 2200px) {
+    :root {
+        --left-panel-width: 820px;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --profile-pic-max: 500px;
+    }
+}
+
+@media (min-width: 1800px) {
+    :root {
+        --profile-pic-max: 560px;
+    }
+}
+
+@media (min-width: 2200px) {
+    :root {
+        --profile-pic-max: 620px;
+    }
 }
